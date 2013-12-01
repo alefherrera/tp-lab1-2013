@@ -53,11 +53,11 @@ void agregarViaje(Viajes *v, int *c)
 
 void listarViajes(Viajes *v, int *c)
 {
-        for(int i=0; i< *c; i++)
-        {
-            MostrarViaje(&v[i]);
-        }
-        system("pause>nul");
+    for(int i=0; i< *c; i++)
+    {
+        MostrarViaje(&v[i]);
+    }
+    system("pause>nul");
 }
 
 void MostrarViaje(Viajes *v)
@@ -67,6 +67,5 @@ void MostrarViaje(Viajes *v)
     MostrarFecha(v->fechav);
     cout<<"CODIGO DE CAMION: "<<v->codigoc<<endl<<endl;
 }
-
 
 #endif // VIAJES_H_INCLUDED
