@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1383566231 source:c:\users\backup_labs\desktop\tp final\tp final\main.cpp
+	<cstdlib>
+	<cstring>
+
+1383574330 source:c:\users\iwanagu\desktop\tp final\tp final\main.cpp
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"headers/camiones.h"
+
+1385789944 c:\users\iwanagu\desktop\tp final\tp final\headers\camiones.h
+
