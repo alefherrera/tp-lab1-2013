@@ -2,10 +2,10 @@
 #define VIAJES_H_INCLUDED
 void listarViajes(Viajes*, int*);
 void MostrarViaje(Viajes*);
-void agregarViaje(Viajes*, int*);
-void menuViajes(Viajes *, int *);
+void agregarViaje(Viajes*, int*, Camiones*, int);
+void menuViajes(Viajes *, int *, Camiones*, int);
 
-void menuViajes(Viajes *v, int *c)
+void menuViajes(Viajes *vViajes, int *cViajes, Camiones *vCamiones, int cCam)
 {
     int opc;
     while (1){
@@ -19,10 +19,10 @@ void menuViajes(Viajes *v, int *c)
     switch (opc){
 
     case 1:
-        agregarViaje(v,c);
+        agregarViaje(vViajes,cViajes,vCamiones,cCam);
         break;
     case 2:
-        listarViajes(v,c);
+        listarViajes(vViajes,cViajes);
         break;
     case 0:
         return;
@@ -35,27 +35,38 @@ void menuViajes(Viajes *v, int *c)
     }
 }
 
-void agregarViaje(Viajes *v, int *c)
+void agregarViaje(Viajes *vViajes, int *cViajes, Camiones *vCamiones, int cCam)
 {
     int codigoc, codigov;
     Fecha f;
+
     cout<<"INGRESE CODIGO CAMION"<<endl;
     cin>>codigoc;
+    if (validarCodigoc(vCamiones,&cCam,codigoc))
+    {
+        cout<<"EL CAMION NO EXISTE";
+        return;
+    }
     cout<<"INGRESE CODIGO VIAJE"<<endl;
     cin>>codigov;
+    if (validarCodigoc(vViajes,&cViajes,codigov))
+    {
+        cout<<"EL CODIGO DE VIAJE YA EXISTE";
+        return;
+    }
     cout<<"INGRESE LA FECHA"<<endl;
     f = IngresarFecha();
-    v[*c].fechav = f;
-    v[*c].codigoc = codigoc;
-    v[*c].codigov = codigov;
-    *c+=1;
+    vViajes[*cViajes].fechav = f;
+    vViajes[*cViajes].codigoc = codigoc;
+    vViajes[*cViajes].codigov = codigov;
+    *cViajes+=1;
 }
 
-void listarViajes(Viajes *v, int *c)
+void listarViajes(Viajes *vViajes, int *c)
 {
     for(int i=0; i< *c; i++)
     {
-        MostrarViaje(&v[i]);
+        MostrarViaje(&vViajes[i]);
     }
     system("pause>nul");
 }
