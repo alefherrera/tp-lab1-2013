@@ -32,10 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="../../cuca.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="headers/camiones.h" />
+		<Unit filename="headers/funciones.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

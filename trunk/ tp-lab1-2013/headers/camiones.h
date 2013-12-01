@@ -41,7 +41,8 @@ case 0:
 return;
     break;
 default:
-
+    cout << "Opcion incorrecta";
+    system("pause>nul");
     break;
 
     }
