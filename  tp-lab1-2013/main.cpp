@@ -32,13 +32,16 @@ bool estado;
 };
 #include "headers/funciones.h"
 #include "headers/camiones.h"
+#include "headers/viajes.h"
 
 int main()
 {
 Fecha fsistema;
 int opc;
 Camiones vCam[5];
-int cCam=0;
+Viajes vViajes[10];
+Encomiendas vEncomiendas[20];
+int cCam = 0, cViajes = 0, cEncomiendas = 0;
 
 while ("true"){
     system("cls");
@@ -62,10 +65,10 @@ case 1:
     break;
 
 case 2:
-
+    //menuViajes(vViajes, &cViajes);
     break;
 case 3:
-
+    //menuEncomiendas(vEncomiendas, &cEncomiendas)
     break;
 
 case 4:
