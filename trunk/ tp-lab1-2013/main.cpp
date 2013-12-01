@@ -31,8 +31,9 @@ float maxima;
 bool estado;
 };
 
+#include "headers/funciones.h"
 #include "headers/camiones.h"
-
+#include "headers/viajes.h"
 
 int main()
 {
@@ -65,7 +66,7 @@ case 1:
     break;
 
 case 2:
-    //menuViajes(vViajes, &cViajes);
+    menuViajes(vViajes, &cViajes);
     break;
 case 3:
     //menuEncomiendas(vEncomiendas, &cEncomiendas)
