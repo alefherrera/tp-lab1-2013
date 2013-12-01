@@ -70,7 +70,7 @@ system ("cls");
 cout << "INGRESE CODIGO DE CAMION: ";
 cin >> cfalso;
 
-    if (validarCodigo (vCam, cCam, cfalso) <0){
+    if (validarCodigoc (vCam, cCam, cfalso) <0){
 
         cout << "CODIGO YA INGRESADO.";
         system ("pause>nul");
@@ -124,11 +124,11 @@ switch (opc){
 
         cout << "INGRESE CODIGO DE CAMION";
         cin >> cfalso;
-        if (validarCodigo(vCam, cCam, cfalso) < -1){
+        if (validarCodigoc(vCam, cCam, cfalso) < -1){
             cout << "EL CAMION NO EXISTE";
             return;
         }else{
-        pos  = validarCodigo(vCam, cCam, cfalso);
+        pos  = validarCodigoc(vCam, cCam, cfalso);
         if (vCam[pos].estado == true){
 
             cout << "EL CAMION NO SE ENCUENTRA EN EL TALLER";
@@ -147,11 +147,11 @@ break;
 
         cout << "INGRESE CODIGO DE CAMION";
         cin>> cfalso;
-        if (validarCodigo(vCam, cCam, cfalso) < -1){
+        if (validarCodigoc(vCam, cCam, cfalso) < -1){
             cout << "EL CAMION NO EXISTE";
             return;
         }else{
-        pos  = validarCodigo(vCam, cCam, cfalso);
+        pos  = validarCodigoc(vCam, cCam, cfalso);
         if (vCam[pos].estado == false){
 
             cout << "EL CAMION YA SE ENCUENTRA EN EL TALLER";
