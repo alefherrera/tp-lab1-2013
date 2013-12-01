@@ -42,16 +42,18 @@ void agregarViaje(Viajes *vViajes, int *cViajes, Camiones *vCamiones, int cCam)
 
     cout<<"INGRESE CODIGO CAMION"<<endl;
     cin>>codigoc;
-    if (validarCodigoc(vCamiones,&cCam,codigoc))
+    if (validarCodigoc(vCamiones,cCam,codigoc) == -1)
     {
         cout<<"EL CAMION NO EXISTE";
+        system("pause>nul");
         return;
     }
     cout<<"INGRESE CODIGO VIAJE"<<endl;
     cin>>codigov;
-    if (validarCodigoc(vViajes,&cViajes,codigov))
+    if (validarCodigov(vViajes,*cViajes,codigov) != -1)
     {
         cout<<"EL CODIGO DE VIAJE YA EXISTE";
+        system("pause>nul");
         return;
     }
     cout<<"INGRESE LA FECHA"<<endl;

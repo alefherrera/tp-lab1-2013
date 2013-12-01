@@ -33,7 +33,6 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="headers/camiones.h" />
-		<Unit filename="headers/encomiendas.h" />
 		<Unit filename="headers/funciones.h" />
 		<Unit filename="headers/viajes.h" />
 		<Unit filename="main.cpp" />
