@@ -3,8 +3,9 @@
 
 void cargarCamion (Camiones*, int*);
 bool validarCodigo (Camiones*, int*, int);
-void reparacionCamion (Camiones*, int*);
-
+void reparacionCamiones (Camiones*, int*);
+void listarCamionesEstado (Camiones*, int*, int );
+void imprimirCamion (Camiones*, int );
 
 void menuCamiones(Camiones *vCam, int *cCam) {
 int opc;
@@ -37,11 +38,15 @@ case 1:
 
 case 2:
 
+    reparacionCamiones(vCam, cCam);
+
     break;
 
 case 3:
+    listarCamionesEstado(vCam, cCam, 3);
 
     break;
+
 case 0:
 
 return;
@@ -99,6 +104,7 @@ cin >> cfalso;
     vCam[*cCam].maxima = pesofalso;
     vCam[*cCam].estado = true;
     cCam++;
+    return;
 
 }
 
@@ -179,6 +185,47 @@ break;
         return;
 }
 }
+
+void listarCamionesEstado (Camiones *vCam, int *cCam, int id){
+int i;
+for (i=0; i<*cCam;i++){
+
+switch (id){
+
+case 1:
+    if (vCam[i].estado == true){
+        imprimirCamion(vCam,i);
+    }
+    break;
+case 2:
+    if (vCam[i].estado == false){
+        imprimirCamion(vCam,i);
+    }
+    break;
+case 3:
+        imprimirCamion(vCam,i);
+
+    break;
+
+}
+
+}
+}
+
+void imprimirCamion (Camiones *vCam, int i){
+cout << "CODIGO DE CAMION" << vCam[i].codigoc;
+cout << "NRO DE PATENTE" << vCam[i].patente;
+cout << "PESO MAXIMO" << vCam[i].maxima;
+
+if  (vCam[i].estado==true){
+    cout << "ESTADO: DISPONIBLE";
+
+}else{
+    cout << "ESTADO: EN TALLER";
+}
+
+}
+
 
 
 
