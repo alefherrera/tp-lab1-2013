@@ -5,6 +5,7 @@ void cargarCamion (Camiones*, int*);
 bool validarCodigo (Camiones*, int*, int);
 void reparacionCamion (Camiones*, int*);
 
+
 void menuCamiones(Camiones *vCam, int *cCam) {
 int opc;
 while ("true"){
@@ -28,7 +29,7 @@ case 1:
 
         cargarCamion(vCam, cCam);
     } else {
-    cout << "NO SE PUEDEN AGREGAR MAS CAMIONES."
+    cout << "NO SE PUEDEN AGREGAR MAS CAMIONES";
     }
     return;
 
@@ -47,7 +48,7 @@ return;
 
     break;
 default:
-    cout << "Opcion incorrecta";
+    cout << "OPCION INCORRECTA";
     system("pause>nul");
     break;
 
@@ -114,13 +115,13 @@ for (i=0;i<=*cCam;i++){
 return -1;
 }
 
-void reparacionCamiones (*vCam, *cCam) {
-int opc, cfalso;
+void reparacionCamiones (Camiones *vCam, int *cCam) {
+int opc, pos, cfalso;
     while (true) {
     system("cls");
     cout << "1 - RECUPERAR CAMION DEL TALLER"<<endl;
     cout << "2 - ENVIAR CAMION AL TALLER"<<endl<<endl;
-    cin opc;
+    cin >> opc;
 
     }
 switch (opc){
@@ -128,12 +129,12 @@ switch (opc){
         system ("cls");
 
         cout << "INGRESE CODIGO DE CAMION";
-        cin cfalso;
-        if (pos=validarCodigo(vCam, cCam, cfalso) < -1){
+        cin >> cfalso;
+        if (validarCodigo(vCam, cCam, cfalso) < -1){
             cout << "EL CAMION NO EXISTE";
             return;
         }else{
-
+        pos  = validarCodigo(vCam, cCam, cfalso);
         if (vCam[pos].estado == true){
 
             cout << "EL CAMION NO SE ENCUENTRA EN EL TALLER";
@@ -145,10 +146,40 @@ switch (opc){
                 }
 
         }
-
+break;
 
     case 2:
+        system ("cls");
+
+        cout << "INGRESE CODIGO DE CAMION";
+        cin>> cfalso;
+        if (validarCodigo(vCam, cCam, cfalso) < -1){
+            cout << "EL CAMION NO EXISTE";
+            return;
+        }else{
+        pos  = validarCodigo(vCam, cCam, cfalso);
+        if (vCam[pos].estado == false){
+
+            cout << "EL CAMION YA SE ENCUENTRA EN EL TALLER";
+            return;
+        }else{
+        vCam[pos].estado = false;
+        cout << "EL CAMION FUE ENVIADO AL TALLER";
+        return;
+                }
+        }
+        break;
+
+    case 0:
+        return;
+        break;
+    default:
+        cout << "OPCION INCORRECTA";
+        system ("pause<nul");
+        return;
 }
 }
+
+
 
 #endif // CAMIONES_H_INCLUDED
