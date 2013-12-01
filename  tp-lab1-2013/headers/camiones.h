@@ -3,6 +3,7 @@
 
 void cargarCamion (Camiones*, int*);
 bool validarCodigo (Camiones*, int*, int);
+void reparacionCamion (Camiones*, int*);
 
 void menuCamiones(Camiones *vCam, int *cCam) {
 int opc;
@@ -26,7 +27,10 @@ case 1:
     if (*cCam < 5){
 
         cargarCamion(vCam, cCam);
+    } else {
+    cout << "NO SE PUEDEN AGREGAR MAS CAMIONES."
     }
+    return;
 
     break;
 
@@ -38,7 +42,9 @@ case 3:
 
     break;
 case 0:
+
 return;
+
     break;
 default:
     cout << "Opcion incorrecta";
@@ -59,7 +65,7 @@ system ("cls");
 cout << "INGRESE CODIGO DE CAMION: ";
 cin >> cfalso;
 
-    if (validarCodigo (vCam, cCam, cfalso) == false){
+    if (validarCodigo (vCam, cCam, cfalso) <0){
 
         cout << "CODIGO YA INGRESADO.";
         system ("pause>nul");
@@ -102,10 +108,47 @@ int i;
 for (i=0;i<=*cCam;i++){
 
     if (codigo == vCam[i].codigoc){
-        return false;
+        return i;
     }
 }
-return true;
+return -1;
+}
+
+void reparacionCamiones (*vCam, *cCam) {
+int opc, cfalso;
+    while (true) {
+    system("cls");
+    cout << "1 - RECUPERAR CAMION DEL TALLER"<<endl;
+    cout << "2 - ENVIAR CAMION AL TALLER"<<endl<<endl;
+    cin opc;
+
+    }
+switch (opc){
+    case 1:
+        system ("cls");
+
+        cout << "INGRESE CODIGO DE CAMION";
+        cin cfalso;
+        if (pos=validarCodigo(vCam, cCam, cfalso) < -1){
+            cout << "EL CAMION NO EXISTE";
+            return;
+        }else{
+
+        if (vCam[pos].estado == true){
+
+            cout << "EL CAMION NO SE ENCUENTRA EN EL TALLER";
+            return;
+        }else{
+        vCam[pos].estado = true;
+        cout << "EL CAMION FUE RECUPERADO DEL TALLER";
+        return;
+                }
+
+        }
+
+
+    case 2:
+}
 }
 
 #endif // CAMIONES_H_INCLUDED
