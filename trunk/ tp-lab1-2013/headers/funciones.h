@@ -2,13 +2,13 @@
 #define FUNCIONES_H_INCLUDED
 
 int validarCodigoc (Camiones*, int*, int);
-int validarCodigov (Viajes*, int*, int);
+int validarCodigov (Viajes*, int, int);
 void MostrarFecha(Fecha);
-int validarCodigoc(Camiones *vCam, int *cCam, int codigo){
+int validarCodigoc(Camiones *vCam, int cCam, int codigo){
 
 int i;
 
-for (i=0;i<=*cCam;i++){
+for (i=0;i<cCam;i++){
 
     if (codigo == vCam[i].codigoc){
         return i;
@@ -17,9 +17,9 @@ for (i=0;i<=*cCam;i++){
 return -1;
 }
 
-int validarCodigov(Viajes *v, int *c, int codigo){
+int validarCodigov(Viajes *v, int c, int codigo){
     int i;
-    for (i=0;i<=*c;i++){
+    for (i=0;i<c;i++){
 
     if (codigo == v[i].codigov){
         return i;

@@ -70,31 +70,27 @@ system ("cls");
 cout << "INGRESE CODIGO DE CAMION: ";
 cin >> cfalso;
 
-    if (validarCodigoc (vCam, cCam, cfalso) <0){
-
+    if (validarCodigoc (vCam, *cCam, cfalso) != -1){
         cout << "CODIGO YA INGRESADO.";
         system ("pause>nul");
         return;
-
     }else{
+            cout << "INGRESE PATENTE: ";
+            cin.ignore();
+            cin.getline (pfalso, 7);
+        while (kilos == false){
 
-        cout << "INGRESE PATENTE: ";
-        cin.ignore();
-        cin.getline (pfalso, 7);
+            cout << "INGRESE CARGA MAXIMA (EN KILOS): ";
+            cin >> pesofalso;
 
-    while (kilos == false){
+            if (pesofalso > 0 ){
+            kilos = true;
+            } else{
+            cout << "VALOR INCORRECTO. RE";
+            }
 
-        cout << "INGRESE CARGA MAXIMA (EN KILOS): ";
-        cin >> pesofalso;
 
-        if (pesofalso > 0 ){
-        kilos = true;
-        } else{
-        cout << "VALOR INCORRECTO. RE";
         }
-
-
-    }
 
     }
 
@@ -175,41 +171,44 @@ break;
 }
 
 void listarCamionesEstado (Camiones *vCam, int *cCam, int id){
-int i;
-for (i=0; i<*cCam;i++){
+    int i;
+    for (i=0; i<*cCam;i++){
 
-switch (id){
+        switch (id){
 
-case 1:
-    if (vCam[i].estado == true){
-        imprimirCamion(vCam,i);
+        case 1:
+            if (vCam[i].estado == true){
+                imprimirCamion(vCam,i);
+            }
+            break;
+        case 2:
+            if (vCam[i].estado == false){
+                imprimirCamion(vCam,i);
+            }
+            break;
+        case 3:
+                imprimirCamion(vCam,i);
+
+            break;
+
+        }
+
     }
-    break;
-case 2:
-    if (vCam[i].estado == false){
-        imprimirCamion(vCam,i);
-    }
-    break;
-case 3:
-        imprimirCamion(vCam,i);
 
-    break;
+    system("pause>nul");
 
-}
-
-}
 }
 
 void imprimirCamion (Camiones *vCam, int i){
-cout << "CODIGO DE CAMION" << vCam[i].codigoc;
-cout << "NRO DE PATENTE" << vCam[i].patente;
-cout << "PESO MAXIMO" << vCam[i].maxima;
+cout << "CODIGO DE CAMION" << vCam[i].codigoc<<endl;
+cout << "NRO DE PATENTE" << vCam[i].patente<<endl;
+cout << "PESO MAXIMO" << vCam[i].maxima<<endl;
 
 if  (vCam[i].estado==true){
-    cout << "ESTADO: DISPONIBLE";
+    cout << "ESTADO: DISPONIBLE"<<endl;
 
 }else{
-    cout << "ESTADO: EN TALLER";
+    cout << "ESTADO: EN TALLER"<<endl;
 }
 
 }

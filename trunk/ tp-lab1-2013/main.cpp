@@ -66,7 +66,7 @@ case 1:
     break;
 
 case 2:
-    menuViajes(vViajes, &cViajes, vCam, cViajes);
+    menuViajes(vViajes, &cViajes, vCam, cCam);
     break;
 case 3:
     //menuEncomiendas(vEncomiendas, &cEncomiendas)
