@@ -2,7 +2,6 @@
 #define CAMIONES_H_INCLUDED
 
 void cargarCamion (Camiones*, int*);
-bool validarCodigo (Camiones*, int*, int);
 void reparacionCamiones (Camiones*, int*);
 void listarCamionesEstado (Camiones*, int*, int );
 void imprimirCamion (Camiones*, int );
@@ -38,12 +37,12 @@ case 1:
 
 case 2:
 
-    //reparacionCamiones(vCam, cCam);
+    reparacionCamiones(vCam, cCam);
 
     break;
 
 case 3:
- //   listarCamionesEstado(vCam, cCam, 3);
+    listarCamionesEstado(vCam, cCam, 3);
 
     break;
 
@@ -108,18 +107,7 @@ cin >> cfalso;
 
 }
 
-bool validarCodigo(Camiones *vCam, int *cCam, int codigo){
 
-int i;
-
-for (i=0;i<=*cCam;i++){
-
-    if (codigo == vCam[i].codigoc){
-        return i;
-    }
-}
-return -1;
-}
 
 void reparacionCamiones (Camiones *vCam, int *cCam) {
 int opc, pos, cfalso;
