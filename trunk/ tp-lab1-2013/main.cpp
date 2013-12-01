@@ -30,7 +30,7 @@ char patente[7];
 float maxima;
 bool estado;
 };
-
+#include "headers/validafechas.h"
 #include "headers/funciones.h"
 #include "headers/camiones.h"
 #include "headers/viajes.h"

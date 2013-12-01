@@ -11,21 +11,22 @@
 
 1385789944 c:\users\iwanagu\desktop\tp final\tp final\headers\camiones.h
 
-1385923815 source:e:\proyecto\main.cpp
+1385926853 source:e:\proyecto\main.cpp
 	<iostream>
 	<cstdlib>
 	<cstring>
+	"headers/validafechas.h"
 	"headers/funciones.h"
 	"headers/camiones.h"
 	"headers/viajes.h"
 
-1385926352 e:\proyecto\headers\funciones.h
+1385926999 e:\proyecto\headers\funciones.h
 
 1385926493 e:\proyecto\headers\camiones.h
 
 1385919052 ne
 
-1385926051 e:\proyecto\headers\viajes.h
+1385926697 e:\proyecto\headers\viajes.h
 
 1385920266 source:c:\users\ale\desktop\tp\ tp-lab1-2013\main.cpp
 
@@ -38,4 +39,6 @@
 1385920669 c:\users\ale\desktop\tp\ tp-lab1-2013\headers\camiones.h
 
 1385920669 
+
+1385924829 e:\proyecto\headers\validafechas.h
 

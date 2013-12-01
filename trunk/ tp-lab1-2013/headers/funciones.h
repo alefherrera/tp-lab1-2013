@@ -36,12 +36,23 @@ void MostrarFecha(Fecha f)
 Fecha IngresarFecha()
 {
     Fecha f;
+
     cout<<"Dia:";
     cin>>f.dia;
     cout<<"Mes:";
     cin>>f.mes;
     cout<<"Anio";
     cin>>f.anio;
+    while(!comprobarFecha(f.dia,f.mes,f.anio))
+    {
+        cout<<"FECHA INVALIDA"<<endl;
+        cout<<"Dia:";
+        cin>>f.dia;
+        cout<<"Mes:";
+        cin>>f.mes;
+        cout<<"Anio";
+        cin>>f.anio;
+    }
     return f;
 }
 
