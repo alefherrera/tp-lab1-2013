@@ -78,10 +78,11 @@ case 5:
 
     break;
 case 0:
-
+return 0;
     break;
 default:
-
+cout << "OPCION INCORRECTA";
+system ("pause<nul");
     break;
 
     }
