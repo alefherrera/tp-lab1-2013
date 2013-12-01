@@ -38,12 +38,12 @@ case 1:
 
 case 2:
 
-    reparacionCamiones(vCam, cCam);
+    //reparacionCamiones(vCam, cCam);
 
     break;
 
 case 3:
-    listarCamionesEstado(vCam, cCam, 3);
+ //   listarCamionesEstado(vCam, cCam, 3);
 
     break;
 
@@ -103,7 +103,7 @@ cin >> cfalso;
     strcpy (vCam[*cCam].patente, pfalso);
     vCam[*cCam].maxima = pesofalso;
     vCam[*cCam].estado = true;
-    cCam++;
+    *cCam += 1;
     return;
 
 }
